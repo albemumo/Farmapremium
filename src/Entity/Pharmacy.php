@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PharmacyRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,6 +24,16 @@ class Pharmacy
      */
     private $name;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Operation::class, mappedBy="pharmacy", orphanRemoval=true)
+     */
+    private $operations;
+
+    public function __construct()
+    {
+        $this->operations = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -32,9 +44,32 @@ class Pharmacy
         return $this->name;
     }
 
-    public function setName(string $name): self
+    /**
+     * @return Collection|Operation[]
+     */
+    public function getOperations(): Collection
     {
-        $this->name = $name;
+        return $this->operations;
+    }
+
+    public function addOperation(Operation $operation): self
+    {
+        if (!$this->operations->contains($operation)) {
+            $this->operations[] = $operation;
+            $operation->setPharmacy($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOperation(Operation $operation): self
+    {
+        if ($this->operations->removeElement($operation)) {
+            // set the owning side to null (unless already changed)
+            if ($operation->getPharmacy() === $this) {
+                $operation->setPharmacy(null);
+            }
+        }
 
         return $this;
     }
