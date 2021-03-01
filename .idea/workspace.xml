@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dd34e0e-e115-450b-a174-72f7d24eac8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/CustomerService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/OperationService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/PharmacyService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php/php.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Exception/PharmacyNotFound.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/AccumulateService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Operation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Operation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx/conf.d/app.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx/conf.d/app.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AccumulateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccumulateController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/OperationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OperationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PharmacyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PharmacyRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/CustomerService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/CustomerService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/PharmacyService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PharmacyService.php" afterDir="false" />
     </list>
     <list id="6e1ca51a-be90-4daf-9efa-a742c4e336e5" name="Changes by paurubiella" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,12 +36,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" listening_started="true">
+  <component name="PhpDebugGeneral" listening_started="true">
     <xdebug_debug_ports port="9000" />
   </component>
   <component name="PhpServers">
     <servers>
-      <server host="http://localhost" id="abe13318-6094-4167-87fa-fb419a6e42e0" name="Unnamed" port="8000" use_path_mappings="true">
+      <server host="localhost" id="e50e9a17-ece8-4b05-8f6e-e1c263d23df5" name="localhost" use_path_mappings="true">
         <path_mappings>
           <mapping local-root="$PROJECT_DIR$" remote-root="/app" />
           <mapping local-root="$PROJECT_DIR$/public" remote-root="/app/public" />
@@ -135,7 +138,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.php.debug.xdebug.proxy" />
+    <property name="settings.editor.selected.configurable" value="settings.php.debug.servers" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -155,6 +158,9 @@
       <workItem from="1614444476906" duration="4890000" />
       <workItem from="1614602492011" duration="261000" />
       <workItem from="1614602773115" duration="4151000" />
+      <workItem from="1614613127162" duration="109000" />
+      <workItem from="1614613350080" duration="1357000" />
+      <workItem from="1614614862103" duration="8871000" />
     </task>
     <servers />
   </component>
@@ -165,58 +171,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Controller/AccumulateController.php</url>
-          <line>16</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/index.php</url>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/index.php</url>
-          <line>21</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/index.php</url>
-          <line>20</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/index.php</url>
+          <url>file://$PROJECT_DIR$/src/Service/AccumulateService.php</url>
           <line>19</line>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/index.php</url>
-          <line>18</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/index.php</url>
+          <url>file://$PROJECT_DIR$/src/Service/AccumulateService.php</url>
           <line>17</line>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/index.php</url>
-          <line>14</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/index.php</url>
-          <line>11</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/index.php</url>
-          <line>9</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/public/index.php</url>
-          <line>7</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/Repository/PharmacyRepository.php</url>
+          <line>27</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

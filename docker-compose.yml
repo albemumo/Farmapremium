@@ -5,6 +5,7 @@ services:
         build: .
         volumes:
             - ./:/app
+            - ./php/php.ini:/usr/local/etc/php/php.ini
         working_dir: /app
     webserver:
         image: library/nginx:latest
