@@ -49,9 +49,14 @@ class Operation
      */
     private $updatedAt;
 
-    public function __construct()
+    public function __construct(int $points, int $remaining_points, Pharmacy $pharmacy, Customer $customer)
     {
-        $this->createdAt = new \DateTime();
+        $this->points           = $points;
+        $this->remaining_points = $remaining_points;
+        $this->pharmacy         = $pharmacy;
+        $this->customer         = $customer;
+        $this->createdAt        = new \DateTime();
+        $this->updatedAt        = new \DateTime();
     }
 
     public function getId(): ?int

@@ -19,6 +19,32 @@ class OperationRepository extends ServiceEntityRepository
         parent::__construct($registry, Operation::class);
     }
 
+    public function findByPharmacyIdAndCustomerIdAvailablePoints($pharmacyId, $customerId)
+    {
+        return $this->createQueryBuilder('o')
+            ->select('SUM(o.remaining_points) AS total')
+            ->andWhere('o.pharmacy = :pharmacy_id')
+            ->andWhere('o.customer = :customer_id')
+            ->setParameter('pharmacy_id', $pharmacyId)
+            ->setParameter('customer_id', $customerId)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
+
+    public function findByPharmacyIdAndCustomerIdOrderByCreatedAtAsc($pharmacyId, $customerId)
+    {
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.pharmacy = :pharmacy_id')
+            ->andWhere('o.customer = :customer_id')
+            ->setParameter('pharmacy_id', $pharmacyId)
+            ->setParameter('customer_id', $customerId)
+            ->orderBy('o.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Operation[] Returns an array of Operation objects
     //  */
