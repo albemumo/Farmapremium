@@ -29,8 +29,9 @@ class Pharmacy
      */
     private $operations;
 
-    public function __construct()
+    public function __construct(string $name)
     {
+        $this->name       = $name;
         $this->operations = new ArrayCollection();
     }
 

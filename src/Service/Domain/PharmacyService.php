@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Service;
+namespace App\Service\Domain;
 
 use App\Entity\Pharmacy;
 use App\Repository\PharmacyRepository;
 
 class PharmacyService {
 
-    private $pharmacyRepository;
+    private PharmacyRepository $pharmacyRepository;
 
     public function __construct(PharmacyRepository $pharmacyRepository)
     {
         $this->pharmacyRepository = $pharmacyRepository;
     }
 
-    public function getPharmacy(int $pharmacy_id): Pharmacy
+    public function getPharmacy(int $pharmacyId): Pharmacy
     {
-        return $this->pharmacyRepository->find($pharmacy_id);
+        return $this->pharmacyRepository->findOneByPharmacyId($pharmacyId);
     }
 }

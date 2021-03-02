@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dd34e0e-e115-450b-a174-72f7d24eac8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Exception/CustomerNotFound.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Exception/NotEnoughPoints.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/WithdrawService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Farmapremium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Farmapremium.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/Application/SearchService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/Domain/OperationService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AccumulateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccumulateController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/WithdrawController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/WithdrawController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
@@ -21,9 +13,9 @@
       <change beforePath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/OperationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OperationRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/PharmacyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PharmacyRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/CustomerService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/CustomerService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/OperationService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/OperationService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/PharmacyService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/PharmacyService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/CustomerService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Domain/CustomerService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/OperationService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/PharmacyService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Domain/PharmacyService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <list id="6e1ca51a-be90-4daf-9efa-a742c4e336e5" name="Changes by paurubiella" comment="" />
@@ -170,6 +162,10 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Service/Domain" />
+      <recent name="$PROJECT_DIR$/src/Service/Application" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -188,7 +184,7 @@
       <workItem from="1614614862103" duration="19268000" />
       <workItem from="1614641876061" duration="5168000" />
       <workItem from="1614647284144" duration="1975000" />
-      <workItem from="1614688484893" duration="3247000" />
+      <workItem from="1614688484893" duration="19958000" />
     </task>
     <servers />
   </component>

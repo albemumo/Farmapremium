@@ -29,8 +29,9 @@ class Customer
      */
     private $operations;
 
-    public function __construct()
+    public function __construct(string $fullname)
     {
+        $this->fullname = $fullname;
         $this->operations = new ArrayCollection();
     }
 

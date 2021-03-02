@@ -59,6 +59,19 @@ class Operation
         $this->updatedAt        = new \DateTime();
     }
 
+    public function toArray()
+    {
+        return [
+            'id'               => $this->id,
+            'points'           => $this->points,
+            'remaining_points' => $this->remaining_points,
+            'pharmacy'         => $this->pharmacy->getId(),
+            'customer'         => $this->customer->getId(),
+            'createdAt'        => $this->createdAt,
+            'updatedAt'        => $this->updatedAt
+        ];
+    }
+
     public function getId(): ?int
     {
         return $this->id;
