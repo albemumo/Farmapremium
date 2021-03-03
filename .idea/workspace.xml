@@ -2,30 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dd34e0e-e115-450b-a174-72f7d24eac8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/CustomerServiceTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Test.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/CustomerServiceTest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/CustomerTestBuilder.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/OperationServiceTest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/OperationTestBuilder.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/PharmacyServiceTest.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/PharmacyTestBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/bootstrap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Farmapremium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Farmapremium.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php-docker-settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php-docker-settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AccumulateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccumulateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/WithdrawController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/WithdrawController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Operation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Operation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/OperationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OperationRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PharmacyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PharmacyRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <list id="6e1ca51a-be90-4daf-9efa-a742c4e336e5" name="Changes by paurubiella" comment="" />
@@ -184,6 +175,11 @@
       <path value="$PROJECT_DIR$/vendor/exsyst/swagger" />
       <path value="$PROJECT_DIR$/vendor/symfony/asset" />
       <path value="$PROJECT_DIR$/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/rest-bundle" />
+      <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
+      <path value="$PROJECT_DIR$/vendor/willdurand/jsonp-callback-validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/vendor/symfony/serializer" />
     </include_path>
   </component>
   <component name="PhpXdebugProxy" ide_key="www-data" host="localhost" port="9000" />
@@ -300,7 +296,7 @@
       <workItem from="1614641876061" duration="5168000" />
       <workItem from="1614647284144" duration="1975000" />
       <workItem from="1614688484893" duration="30682000" />
-      <workItem from="1614731283154" duration="21613000" />
+      <workItem from="1614731283154" duration="23027000" />
     </task>
     <servers />
   </component>
