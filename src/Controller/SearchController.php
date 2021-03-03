@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Swagger\Annotations as SWG;
 
 class SearchController extends AbstractController
 {
@@ -24,58 +25,130 @@ class SearchController extends AbstractController
     }
 
     /**
-     * @Route("/pharmacy/available/points", name="pharmacy_available_points")
+     * @Route("/api/v1/pharmacies/{pharmacyId}", methods={"GET"})
      * @param Request $request
+     * @SWG\Response(
+     *     response=200,
+     *     description="Show total current points of pharmacy between two dates.",
+     *     @SWG\Schema(
+     *         type="string",
+     *     )
+     * )
+     * @SWG\Parameter(
+     *     name="pharmacyId",
+     *     in="path",
+     *     type="integer",
+     *     description="The field used to input pharmacy id"
+     * )
+     * @SWG\Parameter(
+     *     name="startDate",
+     *     in="query",
+     *     type="integer",
+     *     description="The field used to input customer id"
+     * )
+     * @SWG\Parameter(
+     *     name="endDate",
+     *     in="query",
+     *     type="integer",
+     *     description="The field used to input points to withdraw"
+     * )
+     * @SWG\Tag(name="search")
      *
-     * @return Response
+     * @return JsonResponse
      */
-    public function index(Request $request): Response
+    public function getPharmaciesAvailablePointsAction(Request $request): Response
     {
-        $pharmacyId = $request->get('pharmacy_id');
+        $pharmacyId = $request->get('pharmacyId');
         $startDate  = $request->get('startDate');
         $endDate    = $request->get('endDate');
 
-        $startDateDateTime  = DateTime::createFromFormat('Y-m-d H:i:s', date($startDate));
-        $endDateDateTime    = DateTime::createFromFormat('Y-m-d H:i:s', date($endDate));
+        $startDateDateTime = DateTime::createFromFormat('Y-m-d H:i:s', date($startDate));
+        $endDateDateTime   = DateTime::createFromFormat('Y-m-d H:i:s', date($endDate));
 
         try {
-            $pharmacyCurrentBalance = $this->searchService->getPharmacyCurrentBalanceBetweenTwoDates($pharmacyId, $startDateDateTime, $endDateDateTime);
+            $pharmacyCurrentBalance = $this->searchService->getPharmacyCurrentBalanceBetweenTwoDates($pharmacyId,
+                $startDateDateTime, $endDateDateTime);
         } catch (Exception $e) {
             throw new HttpException($this->matchErrorCodeWithException($e), $e->getMessage());
         }
 
-        return new JsonResponse('Remaining Points: ' . $pharmacyCurrentBalance, Response::HTTP_OK);
+        $data = [
+            'status' => 'success',
+            'data'   => sprintf('Remaining points: %d', $pharmacyCurrentBalance)
+        ];
+
+        return new JsonResponse($data, Response::HTTP_OK);
     }
 
     /**
-     * @Route("/pharmacy/customer/given/points", name="pharmacy_customer_given_points")
+     * @Route("/api/v1/pharmacies/{pharmacyId}/customers/{customerId}", methods={"GET"})
      * @param Request $request
+     * @SWG\Response(
+     *     response=200,
+     *     description="Show total given points of pharmacy and customer.",
+     *     @SWG\Schema(
+     *         type="string",
+     *     )
+     * )
+     * @SWG\Parameter(
+     *     name="pharmacyId",
+     *     in="path",
+     *     type="integer",
+     *     description="The field used to input pharmacy id"
+     * )
+     * @SWG\Parameter(
+     *     name="customerId",
+     *     in="path",
+     *     type="integer",
+     *     description="The field used to input customer id"
+     * )
+     * @SWG\Tag(name="search")
      *
-     * @return Response
+     * @return JsonResponse
      */
-    public function pharmacyCustomerGivenPoints(Request $request): Response
+    public function getPharmaciesCustomersGivenPointsAction(Request $request): Response
     {
-        $pharmacyId = $request->get('pharmacy_id');
-        $customerId = $request->get('customer_id');
+        $pharmacyId = $request->get('pharmacyId');
+        $customerId = $request->get('customerId');
 
         try {
-            $pharmacyCustomerTotalGivenPoints = $this->searchService->getPharmacyCustomerTotalGivenPoints($pharmacyId, $customerId);
+            $pharmacyCustomerTotalGivenPoints = $this->searchService->getPharmacyCustomerTotalGivenPoints($pharmacyId,
+                $customerId);
         } catch (Exception $e) {
             throw new HttpException($this->matchErrorCodeWithException($e), $e->getMessage());
         }
 
-        return new JsonResponse('Total given points: ' . $pharmacyCustomerTotalGivenPoints, Response::HTTP_OK);
+        $data = [
+            'status' => 'success',
+            'data'   => sprintf('Remaining points: %d', $pharmacyCustomerTotalGivenPoints)
+        ];
+
+        return new JsonResponse($data, Response::HTTP_OK);
     }
 
     /**
-     * @Route("/customer/available/points", name="customer_available_points")
+     * @Route("/api/v1/customers/{customerId}", methods={"GET"})
      * @param Request $request
+     * @SWG\Response(
+     *     response=200,
+     *     description="Show customer total available points.",
+     *     @SWG\Schema(
+     *         type="string",
+     *     )
+     * )
+     * @SWG\Parameter(
+     *     name="customerId",
+     *     in="path",
+     *     type="integer",
+     *     description="The field used to input customer id"
+     * )
+     * @SWG\Tag(name="search")
      *
-     * @return Response
+     * @return JsonResponse
      */
-    public function customerAvailablePoints(Request $request): Response
+    public function getCustomerAvailablePointsAction(Request $request): Response
     {
-        $customerId = $request->get('customer_id');
+        $customerId = $request->get('customerId');
 
         try {
             $customerTotalGivenPoints = $this->searchService->getCustomerAvailablePoints($customerId);
@@ -83,9 +156,13 @@ class SearchController extends AbstractController
             throw new HttpException($this->matchErrorCodeWithException($e), $e->getMessage());
         }
 
-        return new JsonResponse('Total customer points: ' . $customerTotalGivenPoints, Response::HTTP_OK);
-    }
+        $data = [
+            'status' => 'success',
+            'data'   => sprintf('Total customer points: %d', $customerTotalGivenPoints)
+        ];
 
+        return new JsonResponse($data, Response::HTTP_OK);
+    }
 
 
     private function matchErrorCodeWithException(Exception $e): int

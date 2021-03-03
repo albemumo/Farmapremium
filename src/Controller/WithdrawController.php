@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Swagger\Annotations as SWG;
 
 class WithdrawController extends AbstractController
 {
@@ -24,24 +25,55 @@ class WithdrawController extends AbstractController
     }
 
     /**
-     * @Route("/withdraw", name="withdraw")
+     * @Route("/api/v1/operations/withdraw", methods={"POST"})
      * @param Request $request
+     * @SWG\Response(
+     *     response=200,
+     *     description="Withdraw the input points by pharmacy and customer and return the remaining points",
+     *     @SWG\Schema(
+     *         type="string",
+     *     )
+     * )
+     * @SWG\Parameter(
+     *     name="pharmacyId",
+     *     in="query",
+     *     type="integer",
+     *     description="The field used to input pharmacy id"
+     * )
+     * @SWG\Parameter(
+     *     name="customerId",
+     *     in="query",
+     *     type="integer",
+     *     description="The field used to input customer id"
+     * )
+     * @SWG\Parameter(
+     *     name="points",
+     *     in="query",
+     *     type="integer",
+     *     description="The field used to input points to withdraw"
+     * )
+     * @SWG\Tag(name="withdraw")
      *
-     * @return Response
+     * @return JsonResponse
      */
-    public function index(Request $request): Response
+    public function postWithdrawAction(Request $request): JsonResponse
     {
-        $pharmacy_id = $request->get('pharmacy_id');
-        $customer_id = $request->get('customer_id');
-        $points      = $request->get('points');
+        $pharmacyId = $request->get('pharmacyId');
+        $customerId = $request->get('customerId');
+        $points     = $request->get('points');
 
         try {
-            $availablePoints = $this->withdrawService->withdraw($pharmacy_id, $customer_id, $points);
+            $remainingPoints = $this->withdrawService->withdraw($pharmacyId, $customerId, $points);
         } catch (Exception $e) {
             throw new HttpException($this->matchErrorCodeWithException($e), $e->getMessage());
         }
 
-        return new JsonResponse('Remaining Points: ' . $availablePoints, Response::HTTP_OK);
+        $data = [
+            'status' => 'success',
+            'data'   => sprintf('Remaining points: %d', $remainingPoints)
+        ];
+
+        return new JsonResponse($data, Response::HTTP_OK);
     }
 
     private function matchErrorCodeWithException(Exception $e): int

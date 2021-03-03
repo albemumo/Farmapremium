@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\OperationRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Swagger\Annotations as SWG;
 
 /**
  * @ORM\Entity(repositoryClass=OperationRepository::class)
