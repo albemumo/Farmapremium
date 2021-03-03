@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "89041760-8700-4240-9a1f-ed51b8c1d58b",
+		"name": "Farmapremium",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCurrentPointsByPharmacyBetweenTwoDates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/pharmacies/17?startDate=2021-03-02 00:00:00&endDate=2021-03-03 00:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"pharmacies",
+						"17"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2021-03-02 00:00:00"
+						},
+						{
+							"key": "endDate",
+							"value": "2021-03-03 00:00:00"
+						}
+					]
+				},
+				"description": "Show total current points of pharmacy between two dates."
+			},
+			"response": []
+		},
+		{
+			"name": "GetTotalPointsByPharmacyAndCustomer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/pharmacies/17/customers/31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"pharmacies",
+						"17",
+						"customers",
+						"31"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2021-03-02 00:00:00",
+							"disabled": true
+						},
+						{
+							"key": "endDate",
+							"value": "2021-03-03 00:00:00",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Show total given points of pharmacy and customer."
+			},
+			"response": []
+		},
+		{
+			"name": "GetCustomerPoints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/customers/31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"31"
+					]
+				},
+				"description": "Show customer total available points."
+			},
+			"response": []
+		},
+		{
+			"name": "Post Accumulate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "pharmacyId",
+							"value": "17",
+							"type": "text"
+						},
+						{
+							"key": "customerId",
+							"value": "31",
+							"type": "text"
+						},
+						{
+							"key": "points",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/operations/accumulate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"operations",
+						"accumulate"
+					]
+				},
+				"description": "Accumulate points for a given pharmacyId and customerId"
+			},
+			"response": []
+		},
+		{
+			"name": "Post Withdraw",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "pharmacyId",
+							"value": "17",
+							"type": "text"
+						},
+						{
+							"key": "customerId",
+							"value": "31",
+							"type": "text"
+						},
+						{
+							"key": "points",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/operations/withdraw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"operations",
+						"withdraw"
+					]
+				},
+				"description": "Withdraw points for a given pharmacyId and customerId"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
