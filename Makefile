@@ -69,5 +69,5 @@ shell:
 ## test:		 runs app UNIT test
 .PHONY : test
 test:
-	docker-compose exec php /vendor/bin/phpunit -c phpunit.xml.dist
+	docker-compose exec app bin/phpunit -c phpunit.xml.dist
 

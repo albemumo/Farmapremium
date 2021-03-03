@@ -2,20 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dd34e0e-e115-450b-a174-72f7d24eac8d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Service/Application/SearchService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/Domain/OperationService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/CustomerServiceTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/CustomerTestBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/OperationServiceTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/OperationTestBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/PharmacyServiceTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/PharmacyTestBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Farmapremium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Farmapremium.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php-docker-settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php-docker-settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AccumulateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccumulateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SearchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/WithdrawController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/WithdrawController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Operation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Operation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Pharmacy.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Pharmacy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CustomerRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/OperationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OperationRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/PharmacyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PharmacyRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/CustomerService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Domain/CustomerService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/OperationService.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/PharmacyService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Domain/PharmacyService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <list id="6e1ca51a-be90-4daf-9efa-a742c4e336e5" name="Changes by paurubiella" comment="" />
@@ -131,6 +141,49 @@
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy-phpunit" />
+      <path value="$PROJECT_DIR$/vendor/nelmio/api-doc-bundle" />
+      <path value="$PROJECT_DIR$/vendor/zircote/swagger-php" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/vendor/exsyst/swagger" />
+      <path value="$PROJECT_DIR$/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/vendor/twig/extra-bundle" />
     </include_path>
   </component>
   <component name="PhpXdebugProxy" ide_key="www-data" host="localhost" port="9000" />
@@ -149,13 +202,20 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm" value="Docker" />
     <property name="credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm" value="Docker" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+    <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -163,9 +223,64 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/Unit/Service/Domain" />
+      <recent name="$PROJECT_DIR$/tests/Unit" />
       <recent name="$PROJECT_DIR$/src/Service/Domain" />
       <recent name="$PROJECT_DIR$/src/Service/Application" />
     </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.OperationServiceTest.Should_ReturnAnExistingCustomer_GivenAValidId">
+    <configuration name="CustomerServiceTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Unit\Service\Domain\CustomerServiceTest" configuration_file="/opt/project/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Service/Domain/CustomerServiceTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CustomerServiceTest.Should_ThrowException_WhenCustomerNotFound" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Unit\Service\Domain\CustomerServiceTest" configuration_file="/opt/project/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Service/Domain/CustomerServiceTest.php" method="Should_ThrowException_WhenCustomerNotFound" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="OperationServiceTest.Should_ReturnAnExistingCustomer_GivenAValidId" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Unit\Service\Domain\OperationServiceTest" configuration_file="/opt/project/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Service/Domain/OperationServiceTest.php" method="Should_ReturnAnExistingCustomer_GivenAValidId" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PharmacyServiceTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Unit\Service\Domain\PharmacyServiceTest" configuration_file="/opt/project/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Service/Domain/PharmacyServiceTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PharmacyServiceTest.Should_ThrowException_WhenPharmacyNotFound" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="App\Tests\Unit\Service\Domain\PharmacyServiceTest" configuration_file="/opt/project/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Unit/Service/Domain/PharmacyServiceTest.php" method="Should_ThrowException_WhenPharmacyNotFound" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="farmapremium_app:latest" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHPUnit.Test" />
+      <item itemvalue="PHPUnit.phpunit.xml.dist" />
+      <item itemvalue="PHPUnit.CustomerServiceTest.Should_ThrowException_WhenCustomerNotFound" />
+      <item itemvalue="PHPUnit.CustomerServiceTest" />
+      <item itemvalue="PHPUnit.PharmacyServiceTest.Should_ThrowException_WhenPharmacyNotFound" />
+      <item itemvalue="PHPUnit.PharmacyServiceTest" />
+      <item itemvalue="PHPUnit.OperationServiceTest.Should_ReturnAnExistingCustomer_GivenAValidId" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.OperationServiceTest.Should_ReturnAnExistingCustomer_GivenAValidId" />
+        <item itemvalue="PHPUnit.PharmacyServiceTest" />
+        <item itemvalue="PHPUnit.CustomerServiceTest" />
+        <item itemvalue="PHPUnit.PharmacyServiceTest.Should_ThrowException_WhenPharmacyNotFound" />
+        <item itemvalue="PHPUnit.CustomerServiceTest.Should_ThrowException_WhenCustomerNotFound" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -184,7 +299,8 @@
       <workItem from="1614614862103" duration="19268000" />
       <workItem from="1614641876061" duration="5168000" />
       <workItem from="1614647284144" duration="1975000" />
-      <workItem from="1614688484893" duration="19958000" />
+      <workItem from="1614688484893" duration="30682000" />
+      <workItem from="1614731283154" duration="21613000" />
     </task>
     <servers />
   </component>

@@ -6,6 +6,7 @@
         <entry key="a532fc09-b05f-47cc-88fa-1343d1ff678b">
           <value>
             <DockerContainerSettings>
+              <option name="runCliOptions" value="" />
               <option name="version" value="1" />
               <option name="volumeBindings">
                 <list>
