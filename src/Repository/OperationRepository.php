@@ -44,16 +44,15 @@ class OperationRepository extends ServiceEntityRepository
 
     public function findByPharmacyIdAndCustomerIdAvailablePoints($pharmacyId, $customerId)
     {
-        return current(
-            $this->createQueryBuilder('o')
+        return $this->createQueryBuilder('o')
                 ->select('SUM(o.remaining_points) AS total')
                 ->andWhere('o.pharmacy = :pharmacy_id')
                 ->andWhere('o.customer = :customer_id')
                 ->setParameter('pharmacy_id', $pharmacyId)
                 ->setParameter('customer_id', $customerId)
                 ->getQuery()
-                ->getOneOrNullResult()
-        ) ?: 0;
+                ->getSingleScalarResult()
+            ?: 0;
     }
 
     public function findByPharmacyIdAndCustomerIdOrderByCreatedAtAsc($pharmacyId, $customerId)
@@ -74,8 +73,7 @@ class OperationRepository extends ServiceEntityRepository
         DateTime $startDate,
         DateTime $endDate
     ) {
-        return current(
-            $this->createQueryBuilder('o')
+        return $this->createQueryBuilder('o')
                 ->select('SUM(o.remaining_points) AS total')
                 ->andWhere('o.pharmacy = :pharmacy_id')
                 ->andWhere('o.remaining_points > 0')
@@ -84,62 +82,31 @@ class OperationRepository extends ServiceEntityRepository
                 ->setParameter('startDate', $startDate->format('Y-m-d H:i:s'))
                 ->setParameter('endDate', $endDate->format('Y-m-d H:i:s'))
                 ->getQuery()
-                ->getOneOrNullResult()
-        ) ?: 0;
+                ->getSingleScalarResult()
+        ?: 0;
     }
 
     public function findByPharmacyIdAndCustomerIdTotalGivenPoints($pharmacyId, $customerId)
     {
-        return current(
-            $this->createQueryBuilder('o')
+        return $this->createQueryBuilder('o')
                 ->select('SUM(o.points) AS total')
                 ->andWhere('o.pharmacy = :pharmacy_id')
                 ->andWhere('o.customer = :customer_id')
                 ->setParameter('pharmacy_id', $pharmacyId)
                 ->setParameter('customer_id', $customerId)
                 ->getQuery()
-                ->getOneOrNullResult()
-        ) ?: 0;
+                ->getSingleScalarResult()
+        ?: 0;
     }
 
     public function findByCustomerIdAvailablePoints($customerId)
     {
-        return current(
-            $this->createQueryBuilder('o')
+        return $this->createQueryBuilder('o')
                 ->select('SUM(o.remaining_points) AS total')
                 ->andWhere('o.customer = :customer_id')
                 ->setParameter('customer_id', $customerId)
                 ->getQuery()
-                ->getOneOrNullResult()
-        ) ?: 0;
+                ->getSingleScalarResult()
+        ?: 0;
     }
-
-    // /**
-    //  * @return Operation[] Returns an array of Operation objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('o')
-            ->andWhere('o.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('o.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Operation
-    {
-        return $this->createQueryBuilder('o')
-            ->andWhere('o.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
