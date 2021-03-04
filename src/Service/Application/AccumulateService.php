@@ -31,6 +31,9 @@ class AccumulateService
         $pharmacy = $this->pharmacyService->getPharmacy($pharmacyId);
         $customer = $this->customerService->getCustomer($customerId);
 
-        return $this->operationService->createOperation($points, $points, $pharmacy, $customer);
+        $operation = $this->operationService->createOperation($points, $points, $pharmacy, $customer);
+        $this->operationService->persistAndFlush($operation);
+
+        return $operation;
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\OperationRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Swagger\Annotations as SWG;
 
@@ -50,14 +51,14 @@ class Operation
      */
     private $updatedAt;
 
-    public function __construct(int $points, int $remaining_points, Pharmacy $pharmacy, Customer $customer)
+    public function __construct(int $points, int $remaining_points, Pharmacy $pharmacy, Customer $customer, DateTime $createdAt = null, DateTime $updatedAt = null)
     {
         $this->points           = $points;
         $this->remaining_points = $remaining_points;
         $this->pharmacy         = $pharmacy;
         $this->customer         = $customer;
-        $this->createdAt        = new \DateTime();
-        $this->updatedAt        = new \DateTime();
+        $this->createdAt        = $createdAt ?: new DateTime();
+        $this->updatedAt        = $updatedAt ?: new DateTime();
     }
 
     public function toArray()

@@ -18,15 +18,20 @@ class OperationService
         $this->operationRepository = $operationRepository;
     }
 
+    public function persistAndFlush(Operation $operation)
+    {
+        $this->operationRepository->persistAndFlush($operation);
+    }
+
     public function createOperation(
         int $points,
         int $remainingPoints,
         Pharmacy $pharmacy,
-        Customer $customer
+        Customer $customer,
+        DateTime $createdAt = null,
+        DateTime $updatedAt = null
     ): Operation {
-        $operation = new Operation($points, $remainingPoints, $pharmacy, $customer);
-
-        return $this->operationRepository->persistAndFlush($operation);
+        return new Operation($points, $remainingPoints, $pharmacy, $customer, $createdAt, $updatedAt);
     }
 
     public function getAvailablePointsByPharmacyAndCustomer(
