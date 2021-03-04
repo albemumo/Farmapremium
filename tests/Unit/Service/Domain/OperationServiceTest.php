@@ -9,7 +9,6 @@ use App\Repository\OperationRepository;
 use App\Service\Domain\OperationService;
 use DateTime;
 use Prophecy\PhpUnit\ProphecyTrait;
-use ReflectionClass;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class OperationServiceTest extends KernelTestCase
@@ -43,14 +42,5 @@ class OperationServiceTest extends KernelTestCase
             $this->fakeDatetime, $this->fakeDatetime);
 
         self::assertEquals($this->operation, $operation, "Operation does not match! ");
-    }
-
-    public function set($entity, $value, $propertyName = 'id')
-    {
-        $class    = new ReflectionClass($entity);
-        $property = $class->getProperty($propertyName);
-        $property->setAccessible(true);
-
-        $property->setValue($entity, $value);
     }
 }

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4dd34e0e-e115-450b-a174-72f7d24eac8d" name="Default Changelist" comment="" />
+    <list default="true" id="4dd34e0e-e115-450b-a174-72f7d24eac8d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Service/Domain/OperationServiceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Service/Domain/OperationServiceTest.php" afterDir="false" />
+    </list>
     <list id="6e1ca51a-be90-4daf-9efa-a742c4e336e5" name="Changes by paurubiella" comment="" />
     <list id="bc61d1ef-ea1d-4282-bc07-95590c7018da" name="Changes by prubiella" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -279,7 +281,7 @@
       <workItem from="1614641876061" duration="5168000" />
       <workItem from="1614647284144" duration="1975000" />
       <workItem from="1614688484893" duration="30682000" />
-      <workItem from="1614731283154" duration="38803000" />
+      <workItem from="1614731283154" duration="39061000" />
     </task>
     <servers />
   </component>
